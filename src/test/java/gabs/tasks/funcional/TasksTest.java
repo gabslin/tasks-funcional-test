@@ -2,13 +2,10 @@ package gabs.tasks.funcional;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -22,7 +19,7 @@ public class TasksTest {
 		driver = new RemoteWebDriver(
 				new URL("http://193.123.103.197:4444/"), cap);
 		driver.navigate().to("http://193.123.103.197:8001/tasks/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	
@@ -32,7 +29,6 @@ public class TasksTest {
 		try {
 		//clicar em Add Todo
 		driver.findElement(By.id("addTodo")).click();
-		
 		//escrever descrição
 		driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 		//escrever a data
